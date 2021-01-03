@@ -8,7 +8,6 @@ using TechJobsPersistent.Data;
 using TechJobsPersistent.Models;
 using TechJobsPersistent.ViewModels;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TechJobsPersistent.Controllers
 {
@@ -21,7 +20,6 @@ namespace TechJobsPersistent.Controllers
             context = dbContext;
         }
 
-        // GET: /<controller>/
         public IActionResult Index()
         {
             List<Skill> skills = context.Skills.ToList();

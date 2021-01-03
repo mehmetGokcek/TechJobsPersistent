@@ -5,12 +5,19 @@
 <table class="table">
     <tr>
         <th>Employer</th>
-        <td>@Model.EmployerName</td>
+        <th>Skills</th>
+
     </tr>
     <tr>
-        <th>Skills</th>
+        <td>@Model.EmployerName</td>
         <td>@Model.SkillText</td>
+        <td>
+            <button type="button" class="btn btn-danger"> <a class="text-white" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.JobId">Delete</a> </button>
+        </td>
+
     </tr>
+
+
 
 </table>
 
