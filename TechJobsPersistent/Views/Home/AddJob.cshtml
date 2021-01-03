@@ -20,27 +20,27 @@
     </div>
 
 
+    <div class="form-group">
+        @if (Model.Skills.Count == 0)
+        {
+            <p>No Skills yet!</p>
+            <p><a asp-controller="Skill" asp-action="Add">Add a Skill</a></p>
+
+        }
+        else
+        {
+
+            @foreach (Skill skill in Model.Skills)
+            {
+                <label class="form-check-label">
+                    <span>@skill.Name</span>
+                    <input class="form-check-inline" type="checkbox" name="selectedSkills" value="@skill.Id">
+                </label>
+            }
+        }
+    </div>
+
     <input type="submit" value="Add Job" />
+
 </form>
 
-@if (Model.Skills.Count == 0)
-{
-    <p>No Skills yet!</p>
-    <p><a asp-controller="Skill" asp-action="Add">Add a Skill</a></p>
-
-}
-else
-{
-    <table class="table">
-        <tr>
-            <th>Skill Name</th>
-
-        </tr>
-        @foreach (Skill skill in Model.Skills)
-        {
-            <tr>
-                <td>@skill.Name</td>
-            </tr>
-        }
-    </table>
-}
