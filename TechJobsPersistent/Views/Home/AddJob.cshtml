@@ -15,7 +15,8 @@
         <select asp-for="EmployerId" asp-items="Model.Employers">
             <option value="">Select an Employer</option>
         </select>
-        <a asp-controller="Employer" asp-action="Add">Add New Employer</a>
+        <button type="button" class="btn btn-primary btn-sm"> <a class="text-white" asp-controller="Employer" asp-action="Add">Add a New Employer</a> </button>
+
         <span asp-validation-for="EmployerId"></span>
     </div>
 
@@ -24,8 +25,6 @@
         @if (Model.Skills.Count == 0)
         {
             <p>No Skills yet!</p>
-            <p><a asp-controller="Skill" asp-action="Add">Add a Skill</a></p>
-
         }
         else
         {
@@ -37,10 +36,13 @@
                     <input class="form-check-inline" type="checkbox" name="selectedSkills" value="@skill.Id">
                 </label>
             }
+            <button type="button" class="btn btn-primary btn-sm"> <a class="text-white" asp-controller="Skill" asp-action="Add">Add a Skill</a> </button>
+
         }
+        <br>
+        <input type="submit" class="btn btn-info" value="Submit" />
     </div>
 
-    <input type="submit" value="Add Job" />
 
 </form>
 
