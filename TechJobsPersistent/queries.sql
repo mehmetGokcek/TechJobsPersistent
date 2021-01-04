@@ -8,4 +8,5 @@
 --Part 3
 	SELECT DISTINCT Name, Description
 	FROM techjobs.skills
-	INNER JOIN techjobs.jobskills ON techjobs.skills.Id = techjobs.jobskills.SkillId;
+	INNER JOIN techjobs.jobskills ON techjobs.skills.Id = techjobs.jobskills.SkillId
+	ORDER BY Name ASC;
